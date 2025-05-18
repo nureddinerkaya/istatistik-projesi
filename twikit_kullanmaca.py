@@ -14,6 +14,8 @@ PASSWORD = "istatistik"
 
 client = Client('tr-TR')
 
+tweet_data = []
+
 async def main():
     cookies_path = 'cookies.json'
 
@@ -29,19 +31,25 @@ async def main():
         )
         print("Giriş yapıldı ve çerezler kaydedildi.")
 # Search  Tweets
-
-    tweets = await client.search_tweet('bayram since:2025-01-01 until:2025-05-01', 'Top')
-    tweet_data = []
-
+"""
+    tweets = await client.search_tweet('bayram since:2025-04-01 until:2025-04-02', 'Top')
     for tweet in tweets:
-        tweet_data.append({"Date":tweet.created_at, "Text":tweet.text})
+        tweet_data.append(
+            {"id": tweet.id, "name": tweet.user.name, "screen_name": tweet.user.screen_name, "Date": tweet.created_at,
+             "Text": tweet.text, "Views": tweet.view_count, "Likes": tweet.favorite_count,
+             "Retweets": tweet.retweet_count, "Replies": tweet.reply_count})
 
-    # Save tweets to an Excel file
+    while len(tweet_data) < 100:
+        tweets = await tweets.next()
+        for tweet in tweets:
+            tweet_data.append({"id":tweet.id, "name": tweet.user.name, "screen_name": tweet.user.screen_name, "Date":tweet.created_at, "Text":tweet.text, "Views":tweet.view_count, "Likes":tweet.favorite_count, "Retweets":tweet.retweet_count, "Replies":tweet.reply_count})
+            if len(tweet_data) >= 100:
+                break
+
     df = pd.DataFrame(tweet_data)
     df.to_excel('tweets.xlsx', index=False)
+"""
 
-    # Search more tweets
-    more_tweets = await tweets.next()
 
 """
     ###########################################
