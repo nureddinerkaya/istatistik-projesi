@@ -6,9 +6,13 @@ from idlelib import query
 import pandas as pd
 from twikit import Client
 
-#USERNAME = '@vericekici123'
-#EMAIL = 'sadojic896@bamsrad.com'
-#PASSWORD = 'istatistik'
+#USERNAME = '@statsci123'
+#EMAIL = 'wekobi3974@bamsrad.com'
+#PASSWORD = 'istatistik123'
+
+#USERNAME = "@ookopko43065"
+#EMAIL = "4eal4@dcpa.net"
+#PASSWORD = "nureddin123456"
 
 USERNAME = '@istatistik2027'
 EMAIL = 'ertowghan@gmail.com'
@@ -37,8 +41,9 @@ dates = ['. lang:tr since:2024-05-20 until:2024-05-21',
         '. lang:tr since:2024-09-13 until:2024-09-14',
         '. lang:tr since:2024-09-17 until:2024-09-18',
         '. lang:tr since:2024-09-26 until:2024-09-27',
-        '. lang:tr since:2024-10-03 until:2024-10-04',
-        '. lang:tr since:2024-10-08 until:2024-10-09',
+        '. lang:tr since:2024-10-03 until:2024-10-04']
+
+dates2 = ['. lang:tr since:2024-10-08 until:2024-10-09',
         '. lang:tr since:2024-10-16 until:2024-10-17',
         '. lang:tr since:2024-10-24 until:2024-10-25',
         '. lang:tr since:2024-10-30 until:2024-10-31',
@@ -46,9 +51,18 @@ dates = ['. lang:tr since:2024-05-20 until:2024-05-21',
         '. lang:tr since:2024-11-13 until:2024-11-14'
         '. lang:tr since:2024-11-20 until:2024-11-21',
         '. lang:tr since:2024-11-25 until:2024-11-26',
-        '. lang:tr since:2024-12-04 until:2024-12-05']
+        '. lang:tr since:2024-12-04 until:2024-12-05',
+        '. lang:tr since:2024-11-20 until:2024-11-21',
+        '. lang:tr since:2024-11-25 until:2024-11-26',
+        '. lang:tr since:2024-12-04 until:2024-12-05',
+        '. lang:tr since:2024-12-12 until:2024-12-13',
+        '. lang:tr since:2024-12-18 until:2024-12-19',
+        '. lang:tr since:2024-12-26 until:2024-12-27',
+        '. lang:tr since:2024-12-30 until:2024-12-31',
+        '. lang:tr since:2025-01-08 until:2025-01-09',
+        '. lang:tr since:2025-01-13 until:2025-01-14',]
 
-dates2 =['. lang:tr since:2024-11-20 until:2024-11-21',
+dates3 =['. lang:tr since:2024-11-20 until:2024-11-21',
         '. lang:tr since:2024-11-25 until:2024-11-26',
         '. lang:tr since:2024-12-04 until:2024-12-05',
         '. lang:tr since:2024-12-12 until:2024-12-13',
@@ -57,16 +71,15 @@ dates2 =['. lang:tr since:2024-11-20 until:2024-11-21',
         '. lang:tr since:2024-12-30 until:2024-12-31',
         '. lang:tr since:2025-01-08 until:2025-01-09',
         '. lang:tr since:2025-01-13 until:2025-01-14',
-        '. lang:tr since:2025-01-24 until:2025-01-25']
-
-dates3 = ['. lang:tr since:2025-01-28 until:2025-01-29',
+        '. lang:tr since:2025-01-24 until:2025-01-25',
+        '. lang:tr since:2025-01-28 until:2025-01-29',
         '. lang:tr since:2025-02-06 until:2025-02-07',
-        '. lang:tr since:2025-02-10 until:2025-02-11',
-        '. lang:tr since:2025-02-20 until:2025-02-21',
-        '. lang:tr since:2025-02-27 until:2025-02-28',
-        '. lang:tr since:2025-03-05 until:2025-03-06']
+        '. lang:tr since:2025-02-10 until:2025-02-11']
 
-dates4 = ['. lang:tr since:2025-03-11 until:2025-03-12',
+dates4 =['. lang:tr since:2025-02-20 until:2025-02-21',
+        '. lang:tr since:2025-02-27 until:2025-02-28',
+        '. lang:tr since:2025-03-05 until:2025-03-06',
+        '. lang:tr since:2025-03-11 until:2025-03-12',
         '. lang:tr since:2025-03-20 until:2025-03-21',
         '. lang:tr since:2025-03-26 until:2025-03-27',
         '. lang:tr since:2025-04-01 until:2025-04-02',
@@ -77,6 +90,23 @@ dates4 = ['. lang:tr since:2025-03-11 until:2025-03-12',
         '. lang:tr since:2025-05-08 until:2025-05-09',
         '. lang:tr since:2025-05-13 until:2025-05-14']
 
+bayram_tarihleri = [
+    ". lang:tr since:2024-06-16 until:2024-06-17",  # Kurban Bayramı 1. Gün
+    ". lang:tr since:2024-06-17 until:2024-06-18",  # Kurban Bayramı 2. Gün
+    ". lang:tr since:2024-06-18 until:2024-06-19",  # Kurban Bayramı 3. Gün
+    ". lang:tr since:2024-06-19 until:2024-06-20",  # Kurban Bayramı 4. Gün
+
+    ". lang:tr since:2025-03-30 until:2025-04-01",  # Ramazan Bayramı 1. Gün
+    ". lang:tr since:2025-04-31 until:2025-04-02",  # Ramazan Bayramı 2. Gün
+    ". lang:tr since:2025-04-01 until:2025-04-03",  # Ramazan Bayramı 3. Gün
+
+    ". lang:tr since:2024-05-19 until:2024-05-20",  # 19 Mayıs - Atatürk'ü Anma, Gençlik ve Spor Bayramı
+    ". lang:tr since:2024-07-15 until:2024-07-16",  # 15 Temmuz - Milli Birlik ve Demokrasi Günü
+    ". lang:tr since:2024-08-30 until:2024-08-31",  # 30 Ağustos - Zafer Bayramı
+    ". lang:tr since:2024-10-29 until:2024-10-30",  # 29 Ekim - Cumhuriyet Bayramı
+    ". lang:tr since:2025-04-23 until:2025-04-24",  # 23 Nisan - Ulusal Egemenlik ve Çocuk Bayramı
+    ". lang:tr since:2025-05-01 until:2025-05-02",  # 1 Mayıs - Emek ve Dayanışma Günü
+]
 async def main():
     cookies_path = 'cookies.json'
 
@@ -103,21 +133,21 @@ async def main():
         print('Giriş yapıldı ve çerezler kaydedildi.')
 
     async def search_tweets(query): #örnek query '. lang:tr since:2025-04-01 until:2025-04-02'
-        tweets = await client.search_tweet(query, 'Top', 10)
+        tweets = await client.search_tweet(query, 'Top')
         if len(tweets) > 0:
             print("tweet bulundu")
         for tweet in tweets:
             tweet_data.append(
                 {'id': tweet.id, 'name': tweet.user.name, 'screen_name': tweet.user.screen_name, 'Date': tweet.created_at,
                  'Text': tweet.text, 'Hashtags': tweet.hashtags, 'Views': tweet.view_count, 'Likes': tweet.favorite_count,
-                 'Retweets': tweet.retweet_count, 'Replies': tweet.reply_count, "type": 'haftalik'})
+                 'Retweets': tweet.retweet_count, 'Replies': tweet.reply_count, "type": 'bayram'})
 
-    for date in dates2:
+    for date in bayram_tarihleri:
         await search_tweets(date)
 
     #await search_tweets(". lang:tr since:2024-05-20 until:2024-05-21")
     df = pd.DataFrame(tweet_data)
-    df.to_excel('haflatik1.xlsx', index=False)
+    df.to_excel('bayramlar.xlsx', index=False)
 
 
 asyncio.run(main())
